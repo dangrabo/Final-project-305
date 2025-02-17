@@ -1,0 +1,26 @@
+Final project planning
+
+To-Do List
+•	Add task 
+    o	Date started
+    o	Date Due
+    o	Title
+    o	Description
+    o	Location (optional)
+•	Edit task
+•	Delete task
+•	Mark completed
+    o	Date completed
+•	View completed tasks
+    o	Display all add task information of completed tasks
+•	View upcoming tasks
+    o	Display all add task information of non-completed tasks
+
+Views
+•	Add/Edit//Delete/Upcoming tasks (Home)
+    o	Button functionality
+•	Delete/Completed
+    o	Button functionality
+
+Additional Functionality
+•	Clear all button for upcoming and completed
