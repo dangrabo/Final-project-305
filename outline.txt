@@ -6,7 +6,7 @@ To-Do List
     o	Date Due
     o	Title
     o	Description
-    o	Location (optional)
+    o	Priority
 •	Edit task
 •	Delete task
 •	Mark completed
@@ -24,3 +24,6 @@ Views
 
 Additional Functionality
 •	Clear all button for upcoming and completed
+
+DEVELOPMENT NOTES
+Sort the tasks with queries
