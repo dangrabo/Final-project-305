@@ -1,5 +1,23 @@
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button {
+    display: block;
+}
+
+h1 {
+    display: inline-block;
+}
+
 /*Mobile Styles*/
 @media screen and (max-width: 480px) {
+
+    body {
+        
+    }
 
 }
 
