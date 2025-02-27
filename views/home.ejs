@@ -20,7 +20,9 @@
             <button>Button</button>
         </div>
         <div id="task-container">
-            
+            <% if (submissions.length === 0) { %>
+                <div class="task-card"><p>There are no tasks to display</p></div>
+            <% } %>
         </div>
     </div>
 </body>

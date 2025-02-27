@@ -1,6 +1,7 @@
 import express from 'express';
 import { urlencoded } from 'express';
 import dotenv from 'dotenv';
+import mariadb from 'mariadb';
 
 const app = express();
 const PORT = 3000;
@@ -32,10 +33,12 @@ async function connect() {
 }
 
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+    const conn = await connect();
+    const submissions = await conn.query('SELECT * FROM submissions;');
+    console.log(submissions);
     
-    
-    res.render('home');
+    res.render('home', {submissions});
 });
 
 app.listen(PORT, () => {
