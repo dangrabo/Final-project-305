@@ -1,4 +1,5 @@
 import express from 'express';
+import mariadb from 'mariadb';
 import { urlencoded } from 'express';
 import dotenv from 'dotenv';
 
