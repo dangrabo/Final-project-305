@@ -17,7 +17,12 @@
             <div>
             </div>
             <h1>Task List</h1>
-            <button>Button</button>
+            <button id="nav">Button</button>
+            <ul class="dropdown">
+                <li><a href="add">Add Task</a></li>
+                <li><a href="completed"></a>Completed Tasks</li>
+                <li><a href="deleted"></a>Deleted Tasks</li>
+            </ul>
         </div>
         <div id="task-container">
             <% if (submissions.length === 0) { %>

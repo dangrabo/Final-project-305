@@ -64,7 +64,7 @@ app.post('/submit-task', async (req, res) => {
 
     res.render('confirmation', newTask);
 })
-
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`)
-})
+});
+
