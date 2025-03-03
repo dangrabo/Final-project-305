@@ -58,11 +58,13 @@ app.post('/submit-task', async (req, res) => {
 
     const conn = await connect();
 
-    const insertQuery = await conn.query(`INSERT INTO submissions 
-        (dateStarted, dateDue, title, description, priority) VALUES (?, ?, ?, ?, ?)`, 
-        [newTask.dateStart, newTask.dateDue, newTask.title, newTask.description, newTask.priority])
+    const falseValue = false;
 
-    res.render('confirmation', newTask);
+    const insertQuery = await conn.query(`INSERT INTO submissions 
+        (dateStarted, dateDue, title, description, priority, completed, deleted) VALUES (?, ?, ?, ?, ?, ?, ?)`, 
+        [newTask.dateStart, newTask.dateDue, newTask.title, newTask.description, newTask.priority, falseValue, falseValue])
+
+    res.render('confirmation', {newTask});
 })
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`)
