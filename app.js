@@ -2,7 +2,7 @@ import express from 'express';
 import mariadb from 'mariadb';
 import { urlencoded } from 'express';
 import dotenv from 'dotenv';
-import mariadb from 'mariadb';
+
 
 const app = express();
 const PORT = 3000;
@@ -42,6 +42,11 @@ app.get('/', async (req, res) => {
     res.render('home', {submissions});
 });
 
+app.get('/add', async (req, res) => {
+    res.render('add');
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`)
-})
+});
+
