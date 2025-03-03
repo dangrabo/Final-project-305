@@ -2,7 +2,6 @@ import express from 'express';
 import mariadb from 'mariadb';
 import { urlencoded } from 'express';
 import dotenv from 'dotenv';
-import mariadb from 'mariadb';
 
 const app = express();
 const PORT = 3000;
@@ -41,6 +40,30 @@ app.get('/', async (req, res) => {
     
     res.render('home', {submissions});
 });
+
+app.get('/add', (req, res) => {
+    res.render('add')
+});
+
+app.post('/submit-task', async (req, res) => {
+    const newTask = {
+        title: req.body.title,
+        dateStart: req.body.dateStart,
+        dateDue: req.body.dateDue,
+        priority: req.body.priority,
+        description: req.body.description
+    };
+
+    console.log(newTask);
+
+    const conn = await connect();
+
+    const insertQuery = await conn.query(`INSERT INTO submissions 
+        (dateStarted, dateDue, title, description, priority) VALUES (?, ?, ?, ?, ?)`, 
+        [newTask.dateStart, newTask.dateDue, newTask.title, newTask.description, newTask.priority])
+
+    res.render('confirmation', newTask);
+})
 
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`)

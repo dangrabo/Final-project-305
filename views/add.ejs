@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "styles/style.css">
     <title>Adding Your Task</title>
 </head>
 <body>
     <h1>Add Your Task</h1>
+
+    <form action = "submit-task" method = "post">
+        <label>
+            Title
+            <input type = "text" name = "title">
+        </label>
+
+        <label>
+            Date Started
+            <input type = "date" name = "dateStart">
+        </label>
+
+        <label>
+            Date Due
+            <input type = "date" name = "dateDue">
+        </label>
+
+        <label>
+            Task Priority
+            <select name = "priority">
+                <option value = "none">Please select</option>
+                <option value = "low">Low Priority</option>
+                <option value = "medium">Medium Priority</option>
+                <option value = "high">High Priority</option>
+            </select>
+        </label>
+
+        <label>
+            Description
+            <textarea name = description></textarea>
+        </label>
+        <button type = "submit">Submit</button>
+    </form>
 </body>
 </html>
