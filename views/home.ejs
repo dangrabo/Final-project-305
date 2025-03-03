@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js"></script>
     <title>Task List</title>
 </head>
 <body>
@@ -18,12 +19,14 @@
             </div>
             <h1>Task List</h1>
             <button id="nav">Button</button>
+        </div>
+        <div class="dropdiv">
             <ul class="dropdown">
                 <li><a href="add">Add Task</a></li>
-                <li><a href="completed"></a>Completed Tasks</li>
-                <li><a href="deleted"></a>Deleted Tasks</li>
+                <li><a href="completed">Completed Tasks</a></li>
+                <li><a href="deleted">Deleted Tasks</a></li>
             </ul>
-        </div>
+        </div>    
         <div id="task-container">
             <% if (submissions.length === 0) { %>
                 <div class="task-card"><p>There are no tasks to display</p></div>

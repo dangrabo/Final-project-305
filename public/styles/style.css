@@ -1,19 +1,62 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 #header {
     display: flex;
+    padding: 1rem;
     flex-direction: row;
     justify-content: space-around;
     background-color: aquamarine;
     align-items: center;
 }
 
+h1 {
+    display: inline-block;
+}
+
+
+/* ------------------Navigation------------------*/
 button {
     display: block;
 }
 
+.dropdiv {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
 
+ul {
+    list-style: none;
+    margin-right: 19px;
+}
 
-h1 {
+ul li {
     display: inline-block;
+    position: relative;
+    border: 1px solid black;
+}
+
+ul li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+
+}
+
+.dropdown li {
+    display: block;
+}
+
+.dropdown {
+    width: 25%;
+    position: absolute;
+    z-index: 999;
+    display: none;
 }
 
 /*Mobile Styles*/
