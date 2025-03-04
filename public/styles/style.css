@@ -52,12 +52,13 @@ ul {
     background-color: rgb(254, 247, 218);
     padding: 10px;
     border-radius: 10px;
+    border: 2px solid rgb(14, 100, 26);
 }
 
 ul li {
     display: inline-block;
     position: relative;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(14, 100, 26);
 }
 
 ul li:last-child {
@@ -73,7 +74,7 @@ ul li a {
     padding: 10px 15px;
     text-decoration: none;
     text-align: center;
-    color: black;
+    color: rgb(14, 100, 26)
 
 }
 
@@ -103,7 +104,7 @@ ul li a {
 .task-card {
     margin: 10px;
     margin-bottom: 0;
-    border: 1px solid black;
+    border: 2px solid rgb(14, 100, 26);
     border-radius: 15px;
     padding: 10px;
     display: flex;
@@ -127,17 +128,41 @@ h3 {
 
 .description {
     background-color: rgb(254, 247, 218);
-    padding: 5px;
+    padding: 10px;
     border-radius: 7px;
+    margin-bottom: 15px;
 }
 
 .task-card-buttons button {
     display: inline;
     margin-bottom: 0;
     float: right;
+    margin-left: 10px;
+    height: 30px;
+    width: 100px;
 }
 
+.delete-button {
+    background-color: red;
+    color: rgb(254, 247, 218);
+    border: 1px solid rgb(254, 247, 218);
+    border-radius: 5px;
+}
 
+.delete-button:hover {
+    background-color: rgb(195, 0, 0);
+}
+
+.completed-button {
+    background-color: green;
+    color: rgb(254, 247, 218);
+    border: 1px solid rgb(254, 247, 218);
+    border-radius: 5px;
+}
+
+.completed-button:hover {
+    background-color: rgb(0, 105, 0);
+}
 
 
 /*Mobile Styles*/
