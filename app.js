@@ -48,7 +48,7 @@ app.get('/add', (req, res) => {
 app.post('/submit-task', async (req, res) => {
     const newTask = {
         title: req.body.title,
-        dateStart: req.body.dateStart,
+        dateStarted: req.body.dateStarted,
         dateDue: req.body.dateDue,
         priority: req.body.priority,
         description: req.body.description
@@ -62,10 +62,12 @@ app.post('/submit-task', async (req, res) => {
 
     const insertQuery = await conn.query(`INSERT INTO submissions 
         (dateStarted, dateDue, title, description, priority, completed, deleted) VALUES (?, ?, ?, ?, ?, ?, ?)`, 
-        [newTask.dateStart, newTask.dateDue, newTask.title, newTask.description, newTask.priority, falseValue, falseValue])
+        [newTask.dateStarted, newTask.dateDue, newTask.title, newTask.description, newTask.priority, falseValue, falseValue]);
 
     res.render('confirmation', {newTask});
-})
+    conn.release();
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`)
 });

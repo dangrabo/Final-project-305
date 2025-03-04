@@ -18,18 +18,34 @@
             <div>
             </div>
             <h1>Task List</h1>
-            <button id="nav">Button</button>
+            <button id="nav-button"><img src="images/menu2.png" width="40" alt="menu button" id="nav"></button>
         </div>
         <div class="dropdiv">
             <ul class="dropdown">
-                <li><a href="add">Add Task</a></li>
+                <li><a href="/add">Add Task</a></li>
                 <li><a href="completed">Completed Tasks</a></li>
                 <li><a href="deleted">Deleted Tasks</a></li>
             </ul>
         </div>    
         <div id="task-container">
             <% if (submissions.length === 0) { %>
-                <div class="task-card"><p>There are no tasks to display</p></div>
+                <div class="task-card"><p id="no-tasks-p">There are no tasks to display</p></div>
+            <% } else { %>
+                <% for (let sub of submissions) { %>
+                    <% const options = { year: 'numeric', month: 'long', day: 'numeric' }; %>
+                    <div class="task-card">
+                        <h3><%= sub.title %></h3>
+                        <div class="line1">
+                            <p>Due: <%= sub.dateDue.toLocaleDateString('en-US', options) %></p>
+                            <p>Priority: <%= sub.priority %></p>
+                        </div>
+                        <p class="description"><%= sub.description %></p>
+                        <div class="task-card-buttons">
+                            <button class="deleted-button">Delete</button>
+                            <button class="completed-button">Completed</button>
+                        </div>    
+                    </div>
+                <% } %>
             <% } %>
         </div>
     </div>
