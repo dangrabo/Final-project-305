@@ -164,6 +164,10 @@ h3 {
     background-color: rgb(0, 105, 0);
 }
 
+.button-form {
+    display: inline;
+}
+
 .hidden {
     display: none;
 }
