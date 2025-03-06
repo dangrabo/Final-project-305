@@ -42,11 +42,11 @@
                         <p class="description"><%= sub.description %></p>
                         <div class="task-card-buttons">
                             <form action="delete" method="post" class="button-form">
-                                <a href="/"><button class="delete-button">Delete</button></a>
+                                <button type = "submit" class="delete-button">Delete</button>
                                 <input type="text" class="hidden" name="deleteId" value="<%= sub.id %>">
                             </form>
                             <form action = "complete" method = "post" class="button-form">  
-                                <a href="/"><button class="completed-button">Completed</button></a>
+                                <button type = "submit" class="completed-button">Completed</button>
                                 <input type = "text" class = "hidden" name = "completeId" value = "<%= sub.id %>">
                             </form>  
                         </div>    
