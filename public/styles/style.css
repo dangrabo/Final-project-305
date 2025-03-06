@@ -164,6 +164,9 @@ h3 {
     background-color: rgb(0, 105, 0);
 }
 
+.hidden {
+    display: none;
+}
 
 /*Mobile Styles*/
 @media screen and (max-width: 480px) {

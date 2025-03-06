@@ -18,7 +18,8 @@ const pool = mariadb.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
+    connectionLimit: 15
 });
 
 // Connect to our database
@@ -34,11 +35,14 @@ async function connect() {
 
 
 app.get('/', async (req, res) => {
+
+
     const conn = await connect();
-    const submissions = await conn.query('SELECT * FROM submissions;');
+    const submissions = await conn.query('SELECT * FROM submissions WHERE completed <> 1 AND deleted <> 1;');
     console.log(submissions);
     
     res.render('home', {submissions});
+    conn.release();
 });
 
 app.get('/add', (req, res) => {
@@ -66,6 +70,18 @@ app.post('/submit-task', async (req, res) => {
 
     res.render('confirmation', {newTask});
     conn.release();
+});
+
+app.post('/delete', async (req, res) => {
+    const deleteId = req.body.deleteId;
+
+    const conn = await connect();
+    await conn.query('UPDATE submissions SET deleted = 1 WHERE id = ?;', [deleteId]);
+    const submissions = await conn.query('SELECT * FROM submissions WHERE completed <> 1 AND deleted <> 1;');
+    console.log(submissions);
+    
+    console.log(deleteId);
+    res.render('home', {submissions});
 });
 
 app.listen(PORT, () => {

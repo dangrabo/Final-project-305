@@ -22,7 +22,7 @@
         </div>
         <div class="dropdiv">
             <ul class="dropdown">
-                <li><a href="/add">Add Task</a></li>
+                <li><a href="add">Add Task</a></li>
                 <li><a href="completed">Completed Tasks</a></li>
                 <li><a href="deleted">Deleted Tasks</a></li>
             </ul>
@@ -41,8 +41,11 @@
                         </div>
                         <p class="description"><%= sub.description %></p>
                         <div class="task-card-buttons">
-                            <button class="delete-button">Delete</button>
-                            <button class="completed-button">Completed</button>
+                            <form action="delete" method="post">
+                                <a href="/"><button class="delete-button" id="<%= sub.id %>">Delete</button></a>
+                                <input type="text" class="hidden" name="deleteId" value="<%= sub.id %>">
+                            </form>    
+                            <a href="/"><button class="completed-button">Completed</button></a>
                         </div>    
                     </div>
                 <% } %>
