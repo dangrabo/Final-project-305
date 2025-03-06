@@ -8,38 +8,39 @@
 </head>
 <body>
     <h1>Add Your Task</h1>
+    <div class="add-card">
+        <form action = "submit-task" method = "post">
+            <label>
+                Title
+                <input type = "text" name = "title" class="">
+            </label>
 
-    <form action = "submit-task" method = "post">
-        <label>
-            Title
-            <input type = "text" name = "title">
-        </label>
+            <label>
+                Date Started
+                <input type = "date" name = "dateStarted">
+            </label>
 
-        <label>
-            Date Started
-            <input type = "date" name = "dateStarted">
-        </label>
+            <label>
+                Date Due
+                <input type = "date" name = "dateDue">
+            </label>
 
-        <label>
-            Date Due
-            <input type = "date" name = "dateDue">
-        </label>
+            <label>
+                Task Priority
+                <select name = "priority">
+                    <option value = "none">Please select</option>
+                    <option value = "Low">Low Priority</option>
+                    <option value = "Medium">Medium Priority</option>
+                    <option value = "High">High Priority</option>
+                </select>
+            </label>
 
-        <label>
-            Task Priority
-            <select name = "priority">
-                <option value = "none">Please select</option>
-                <option value = "Low">Low Priority</option>
-                <option value = "Medium">Medium Priority</option>
-                <option value = "High">High Priority</option>
-            </select>
-        </label>
-
-        <label>
-            Description
-            <textarea name = description></textarea>
-        </label>
-        <button type = "submit">Submit</button>
-    </form>
+            <label>
+                Description
+                <textarea name = description></textarea>
+            </label>
+            <button type = "submit" class="completed-button" class="task-card-buttons">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

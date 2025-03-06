@@ -168,6 +168,25 @@ h3 {
     display: none;
 }
 
+/* ------------------Add Cards------------------*/
+.add-card {
+    margin: 10px;
+    margin-bottom: 0;
+    border: 2px solid rgb(14, 100, 26);
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffe571;
+}
+
+input, textarea, select {
+    background-color: rgb(254, 247, 218);
+}
+
+option:hover, select:hover {
+    background-color: #ffe571;
+}
 /*Mobile Styles*/
 @media screen and (max-width: 480px) {
 
