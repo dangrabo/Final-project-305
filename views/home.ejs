@@ -44,8 +44,11 @@
                             <form action="delete" method="post">
                                 <a href="/"><button class="delete-button" id="<%= sub.id %>">Delete</button></a>
                                 <input type="text" class="hidden" name="deleteId" value="<%= sub.id %>">
-                            </form>    
-                            <a href="/"><button class="completed-button">Completed</button></a>
+                            </form>
+                            <form action = "complete" method = "post">  
+                                <a href="/"><button class="completed-button">Completed</button></a>
+                                <input type = "text" class = "hidden" name = "completeId" value = "<%= sub.id %>">
+                            </form>  
                         </div>    
                     </div>
                 <% } %>

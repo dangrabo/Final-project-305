@@ -82,6 +82,20 @@ app.post('/delete', async (req, res) => {
     
     console.log(deleteId);
     res.render('home', {submissions});
+    conn.release();
+});
+
+app.post("/complete", async (req, res) => {
+    const completeId = req.body.completeId;
+
+    const conn = await connect();
+    await conn.query('UPDATE submissions SET completed = 1 WHERE id = ?;', [completeId]);
+    const submissions = await conn.query('SELECT * FROM submissions WHERE completed <> 1 AND deleted <> 1;');
+    console.log(submissions);
+
+    console.log(completeId);
+    res.render('home', {submissions});
+    conn.release();
 });
 
 app.listen(PORT, () => {
