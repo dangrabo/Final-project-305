@@ -9,7 +9,7 @@
 <body>
     <h1>Add Your Task</h1>
     <div class="add-card">
-        <form action = "submit-task" method = "post">
+        <form action = "submit-task" method = "post" id="add-form">
             <label>
                 Title
                 <input type = "text" name = "title" class="">
@@ -39,8 +39,11 @@
                 Description
                 <textarea name = description></textarea>
             </label>
-            <button type = "submit" class="completed-button" class="task-card-buttons">Submit</button>
+            <button type = "submit" class="completed-button task-card-buttons">Submit</button>
         </form>
     </div>
+
+    <a href="/"><button class="delete-button" id="go-back-on-add">Go Back</button></a>
+
 </body>
 </html>

@@ -133,7 +133,7 @@ h3 {
     margin-bottom: 15px;
 }
 
-.task-card-buttons button {
+.completed-button, .delete-button {
     display: inline;
     margin-bottom: 0;
     float: right;
@@ -179,9 +179,12 @@ h3 {
     border: 2px solid rgb(14, 100, 26);
     border-radius: 15px;
     padding: 10px;
+    background-color: #ffe571;
+}
+
+#add-form {
     display: flex;
     flex-direction: column;
-    background-color: #ffe571;
 }
 
 input, textarea, select {
@@ -191,6 +194,11 @@ input, textarea, select {
 option:hover, select:hover {
     background-color: #ffe571;
 }
+
+#go-back-on-add {
+    margin: 10px 20px;
+}
+
 /*Mobile Styles*/
 @media screen and (max-width: 480px) {
 
