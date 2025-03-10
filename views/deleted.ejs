@@ -37,7 +37,7 @@
                         </div>
                         <p class="description"><%= sub.description %></p>
                         <div class="task-card-buttons">
-                            <form action="restore" method="post" class="button-form">
+                            <form action="restoreDeleted" method="post" class="button-form">
                                 <button type = "submit" class="completed-button">Restore</button>
                                 <input type="text" class="hidden" name="restoreId" value="<%= sub.id %>">
                             </form>
