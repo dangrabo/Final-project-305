@@ -45,6 +45,23 @@ app.get('/', async (req, res) => {
     conn.release();
 });
 
+app.get('/completed', async (req, res) => {
+    const conn = await connect();
+    const submissions = await conn.query('SELECT * FROM submissions WHERE completed = 1 AND deleted <> 1');
+    console.log(submissions);
+
+    res.render('completed', {submissions});
+    conn.release();
+});
+
+app.get('/deleted', async (req, res) => {
+    const conn = await connect();
+    const submissions = await conn.query('SELECT * FROM submissions WHERE completed <> 1 AND deleted = 1');
+
+    res.render('deleted', {submissions});
+    conn.release();
+});
+
 app.get('/add', (req, res) => {
     res.render('add')
 });

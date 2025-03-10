@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/todo.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js"></script>
+    <title>Completed Tasks</title>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div>
+            </div>
+            <h1>Completed Tasks</h1>
+            <button id="nav-button"><img src="images/menu2.png" width="40" alt="menu button" id="nav"></button>
+        </div>
+        <div class="dropdiv">
+            <ul class="dropdown">
+                <li><a href="add">Add Task</a></li>
+                <li><a href="completed">Completed Tasks</a></li>
+                <li><a href="deleted">Deleted Tasks</a></li>
+            </ul>
+        </div>    
+        <div id="task-container">
+            <% if (submissions.length === 0) { %>
+                <div class="task-card"><p id="no-tasks-p">There are no tasks to display</p></div>
+            <% } else { %>
+                <% for (let sub of submissions) { %>
+                    <% const options = { year: 'numeric', month: 'long', day: 'numeric' }; %>
+                    <div class="task-card">
+                        <h3><%= sub.title %></h3>
+                        <div class="line1">
+                            <p>Due: <%= sub.dateDue.toLocaleDateString('en-US', options) %></p>
+                            <p>Priority: <%= sub.priority %></p>
+                        </div>
+                        <p class="description"><%= sub.description %></p>
+                        <div class="task-card-buttons">
+                            <form action="delete" method="post" class="button-form">
+                                <button type = "submit" class="delete-button">Delete</button>
+                                <input type="text" class="hidden" name="deleteId" value="<%= sub.id %>">
+                            </form>
+                            <form action = "complete" method = "post" class="button-form">  
+                                <button type = "submit" class="completed-button">Completed</button>
+                                <input type = "text" class = "hidden" name = "completeId" value = "<%= sub.id %>">
+                            </form>  
+                        </div>    
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
