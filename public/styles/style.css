@@ -23,6 +23,9 @@ body {
 
 h1 {
     display: inline-block;
+    text-align: center;
+    margin: auto;
+    width: 100%;
 }
 
 #nav-button {
@@ -180,19 +183,41 @@ h3 {
     border-radius: 15px;
     padding: 10px;
     background-color: #ffe571;
+    font-size: 1.3rem;
+    
 }
 
 #add-form {
     display: flex;
     flex-direction: column;
+    margin: auto;
+    align-content: center;
 }
 
-input, textarea, select {
+.add-field-div {
+    width: 80%;
+    margin: 5px auto;
+    display: flex;
+}
+
+.add-field {
     background-color: rgb(254, 247, 218);
+    box-sizing: border-box;
+    border: 1px solid rgb(14, 100, 26);
+    display: inline-block;
+    width: 55%;
+    height: 25px;
+    border-radius: 5px;
 }
 
-option:hover, select:hover {
-    background-color: #ffe571;
+label {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 45%;
+}
+
+option {
+    /* width: 100%; */
 }
 
 #go-back-on-add {
@@ -221,5 +246,17 @@ option:hover, select:hover {
     body {
         width: 70%;
         margin: auto;
+    }
+
+    .add-field-div {
+        width: 50%;
+    }
+
+    .add-field {
+        width: 70%;
+    }
+
+    label {
+        width: 30%;
     }
 }

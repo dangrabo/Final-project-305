@@ -10,36 +10,36 @@
     <h1>Add Your Task</h1>
     <div class="add-card">
         <form action = "submit-task" method = "post" id="add-form">
-            <label>
-                Title
-                <input type = "text" name = "title" class="">
-            </label>
+            <div class="add-field-div">
+                <label for="title">Title</label>
+                <input type = "text" name = "title" class="add-field">
+            </div>            
 
-            <label>
-                Date Started
-                <input type = "date" name = "dateStarted">
-            </label>
+            <div class="add-field-div">
+                <label for="dateDue">Date Due</label>
+                <input type = "date" name = "dateDue" class="add-field">
+            </div>
 
-            <label>
-                Date Due
-                <input type = "date" name = "dateDue">
-            </label>
 
-            <label>
-                Task Priority
-                <select name = "priority">
-                    <option value = "none">Please select</option>
-                    <option value = "Low">Low Priority</option>
-                    <option value = "Medium">Medium Priority</option>
-                    <option value = "High">High Priority</option>
-                </select>
-            </label>
+            <div class="add-field-div">
+                <label for="priority">Task Priority</label>
+                    <select name = "priority" class="add-field">
+                        <option value = "none">Please select</option>
+                        <option value = "Low">Low Priority</option>
+                        <option value = "Medium">Medium Priority</option>
+                        <option value = "High">High Priority</option>
+                    </select>
+            </div>
 
-            <label>
-                Description
-                <textarea name = description></textarea>
-            </label>
-            <button type = "submit" class="completed-button task-card-buttons">Submit</button>
+            <div class="add-field-div">
+                <label for="description">Description</label>
+                <textarea name = "description" class="add-field"></textarea>
+                
+            </div>
+            
+            <div id="add-button-div">
+                <button type = "submit" class="completed-button task-card-buttons">Submit</button>
+            </div>
         </form>
     </div>
 
