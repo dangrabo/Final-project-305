@@ -37,14 +37,10 @@
                         </div>
                         <p class="description"><%= sub.description %></p>
                         <div class="task-card-buttons">
-                            <form action="delete" method="post" class="button-form">
-                                <button type = "submit" class="delete-button">Delete</button>
-                                <input type="text" class="hidden" name="deleteId" value="<%= sub.id %>">
+                            <form action="restore" method="post" class="button-form">
+                                <button type = "submit" class="completed-button">Restore</button>
+                                <input type="text" class="hidden" name="restoreId" value="<%= sub.id %>">
                             </form>
-                            <form action = "complete" method = "post" class="button-form">  
-                                <button type = "submit" class="completed-button">Completed</button>
-                                <input type = "text" class = "hidden" name = "completeId" value = "<%= sub.id %>">
-                            </form>  
                         </div>    
                     </div>
                 <% } %>

@@ -115,6 +115,19 @@ app.post("/complete", async (req, res) => {
     conn.release();
 });
 
+app.post('/restore', async (req, res) => {
+    const restoreId = req.body.restoreId;
+
+    const conn = await connect();
+    await conn.query('UPDATE submissions SET completed = 0, deleted = 0 WHERE id = ?;', [restoreId]);
+    const submissions = await conn.query('SELECT * FROM submissions WHERE completed <> 1 AND deleted <> 1;');
+    console.log(submissions);
+
+    console.log(restoreId);
+    res.render('home', {submissions});
+    conn.release();
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`)
 });
