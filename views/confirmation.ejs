@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
     <title>Confirmation</title>
 </head>
 <body>
@@ -22,16 +23,16 @@
     </div> 
     <div class="add-card">
         <h3><%= newTask.title %></h3>
-        <hr>
+        
         <div class="info-div">
             <div class="value-div">
                 <p class="label">Date Due: </p><p class="value"><%= newTask.dateDue %></p>
             </div>
             <div class="value-div">
-                <p class="label">Priority: </p><p><%= newTask.priority %></p>
+                <p class="label">Priority: </p><p class="value"><%= newTask.priority %></p>
             </div>
-            <div class="value-div">
-                <p class="label">Description: </p><p><%= newTask.description %></p>
+            <div class="value-div description">
+                <p class="value"><%= newTask.description %></p>
             </div>
             
         </div>
