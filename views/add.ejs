@@ -4,16 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "styles/style.css">
+    <script src="scripts/script.js" defer></script>
     <title>Adding Your Task</title>
 </head>
 <body>
-    <h1>Add Your Task</h1>
+    <div id="header">
+        <div>
+        </div>
+        <h1>Add Your Task</h1>
+        <button id="nav-button"><img src="images/menu2.png" width="40" alt="menu button" id="nav"></button>
+    </div>
+    <div class="dropdiv">
+        <ul class="dropdown">
+            <li><a href="add">Add Task</a></li>
+            <li><a href="completed">Completed Tasks</a></li>
+            <li><a href="deleted">Deleted Tasks</a></li>
+        </ul>
+    </div> 
     <div class="add-card">
         <form action = "submit-task" method = "post" id="add-form">
             <div class="add-field-div">
                 <label for="title">Title</label>
                 <input type = "text" name = "title" class="add-field">
             </div>            
+                <p class="add-field-div err">Title is invalid</p>
 
             <div class="add-field-div">
                 <label for="dateDue">Date Due</label>
@@ -33,8 +47,7 @@
 
             <div class="add-field-div">
                 <label for="description">Description</label>
-                <textarea name = "description" class="add-field"></textarea>
-                
+                <input type = "text" name = "description" class="add-field">
             </div>
             
             <div id="add-button-div">

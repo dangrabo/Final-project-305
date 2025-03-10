@@ -23,9 +23,9 @@ body {
 
 h1 {
     display: inline-block;
-    text-align: center;
-    margin: auto;
-    width: 100%;
+    /* text-align: center; */
+    /* margin: auto; */
+    /* width: 30%; */
 }
 
 #nav-button {
@@ -175,7 +175,7 @@ h3 {
     display: none;
 }
 
-/* ------------------Add Cards------------------*/
+/* ------------------Add Card------------------*/
 .add-card {
     margin: 10px;
     margin-bottom: 0;
@@ -184,7 +184,6 @@ h3 {
     padding: 10px;
     background-color: #ffe571;
     font-size: 1.3rem;
-    
 }
 
 #add-form {
@@ -208,6 +207,7 @@ h3 {
     width: 55%;
     height: 25px;
     border-radius: 5px;
+    padding: 4px;
 }
 
 label {
@@ -216,13 +216,34 @@ label {
     width: 45%;
 }
 
-option {
-    /* width: 100%; */
-}
-
-#go-back-on-add {
+.go-back-on-add {
     margin: 10px 20px;
 }
+
+.err {
+    justify-content: flex-end;
+    color: red;
+}
+/* ------------------Confirm Card------------------*/
+.info-div {
+    width: 90%;
+    margin: auto;
+}
+
+.info-div p {
+    display: inline-block;
+    
+}
+
+.value-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label {
+    width: 40%;
+}
+
 
 /*Mobile Styles*/
 @media screen and (max-width: 480px) {
