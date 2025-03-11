@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "styles/style.css">
     <script src="scripts/script.js" defer></script>
+    <script src="scripts/client-validation.js" defer></script>
     <title>Adding Your Task</title>
 </head>
 <body>
@@ -24,17 +25,18 @@
     </div> 
     <div class="add-card">
         <form action = "submit-task" method = "post" id="add-form">
+            
             <div class="add-field-div">
                 <label for="title">Title</label>
-                <input type = "text" name = "title" class="add-field">
+                <input type = "text" name = "title" class="add-field" id="title">
             </div>            
-                <p class="add-field-div err">Title is invalid</p>
-
+            <p class="add-field-div err" id="err-title">Title is required</p>
+            
             <div class="add-field-div">
                 <label for="dateDue">Date Due</label>
-                <input type = "date" name = "dateDue" class="add-field">
+                <input type = "date" name = "dateDue" class="add-field" id="date">
             </div>
-
+            <p class="add-field-div err" id="err-date">Please select a due date</p>
 
             <div class="add-field-div">
                 <label for="priority">Task Priority</label>

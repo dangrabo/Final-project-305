@@ -3,6 +3,7 @@ import mariadb from 'mariadb';
 import { urlencoded } from 'express';
 import dotenv from 'dotenv';
 
+
 const app = express();
 const PORT = 3000;
 app.use(express.urlencoded({extended: true}));
@@ -76,6 +77,7 @@ app.post('/submit-task', async (req, res) => {
     };
 
     console.log(newTask);
+
 
     const conn = await connect();
 

@@ -221,6 +221,7 @@ label {
 }
 
 .err {
+    display: none;
     justify-content: flex-end;
     color: red;
 }
