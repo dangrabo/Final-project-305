@@ -23,11 +23,6 @@ export function validateForm(data) {
         }
     }
 
-    // Validate the description
-    if (!data.description || data.description.trim() === "") {
-        errors.push("Description is required")
-    }
-
     // Return the errors
     return {
         isValid: errors.length === 0,
