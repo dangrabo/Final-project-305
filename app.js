@@ -78,7 +78,7 @@ app.post('/submit-task', async (req, res) => {
     };
 
     // Back-end validation
-    const result = validateForm(order);
+    const result = validateForm(newTask);
     if (!result.isValid) {
         console.log(result.errors);
         res.send(result.errors);
