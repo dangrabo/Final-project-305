@@ -23,6 +23,11 @@ body {
 
 h1 {
     display: inline-block;
+    background-color: rgb(254, 247, 218);
+    border: 2px solid rgb(14, 100, 26);
+    border-radius: 10px;
+    padding: 10px 50px;
+    color: black;
     /* text-align: center; */
     /* margin: auto; */
     /* width: 30%; */
@@ -248,6 +253,18 @@ label {
 
 hr {
     margin: 5px 0;
+}
+
+/* ------------------Special Colors------------------*/
+#completed-h1 {
+    color: rgb(254, 247, 218);
+    background-color: green;
+    border-color: rgb(254, 247, 218);
+}
+
+#deleted-h1 {
+    color: red;
+    border-color: red;
 }
 
 /*Mobile Styles*/

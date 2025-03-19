@@ -73,7 +73,7 @@ app.post('/submit-task', async (req, res) => {
         dateStarted: req.body.dateStarted,
         dateDue: req.body.dateDue,
         priority: req.body.priority,
-        description: req.body.description
+        description: req.body.descriptionnpx 
     };
 
     console.log(newTask);
@@ -139,6 +139,17 @@ app.post('/restoreCompleted', async (req, res) => {
     console.log(submissions);
 
     console.log(restoreId);
+    res.render('completed', {submissions});
+    conn.release();
+});
+
+app.get('/clearCompleted', async (req, res) => {
+
+    const conn = await connect();
+    await conn.query('DELETE FROM submissions WHERE completed = 1 AND deleted <> 1;');
+    const submissions = await conn.query('SELECT * FROM submissions WHERE completed = 1 AND deleted <> 1');
+    console.log(submissions);
+
     res.render('completed', {submissions});
     conn.release();
 });
