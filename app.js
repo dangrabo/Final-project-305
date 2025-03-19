@@ -1,6 +1,7 @@
 import express from 'express';
 import mariadb from 'mariadb';
 import { urlencoded } from 'express';
+import {validateForm} from './services/validation.js';
 import dotenv from 'dotenv';
 
 
@@ -75,6 +76,14 @@ app.post('/submit-task', async (req, res) => {
         priority: req.body.priority,
         description: req.body.descriptionnpx 
     };
+
+    // Back-end validation
+    const result = validateForm(order);
+    if (!result.isValid) {
+        console.log(result.errors);
+        res.send(result.errors);
+        return;
+    }
 
     console.log(newTask);
 
