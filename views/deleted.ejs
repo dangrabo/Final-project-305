@@ -48,5 +48,10 @@
             <% } %>
         </div>
     </div>
+    <% if (submissions.length !== 0) { %>
+        <a href="/clearDeleted"><button class="delete-button go-back-on-add">Clear All</button></a>
+    <% } else { %>
+        <a href="/add"><button class="completed-button go-back-on-add">+</button></a>
+    <% } %>
 </body>
 </html>

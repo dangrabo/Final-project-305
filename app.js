@@ -139,6 +139,17 @@ app.post('/restoreDeleted', async (req, res) => {
     conn.release();
 });
 
+app.get('/clearDeleted', async (req, res) => {
+
+    const conn = await connect();
+    await conn.query('DELETE FROM submissions WHERE deleted = 1 AND completed <> 1;');
+    const submissions = await conn.query('SELECT * FROM submissions WHERE completed <> 1 AND deleted = 1');
+    console.log(submissions);
+
+    res.render('deleted', {submissions});
+    conn.release();
+});
+
 app.post('/restoreCompleted', async (req, res) => {
     const restoreId = req.body.restoreId;
 
