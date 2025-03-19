@@ -34,12 +34,12 @@
             
             <div class="add-field-div">
                 <label for="dateDue">Date Due</label>
-                <input type = "date" name = "dateDue" class="add-field" id="date">
+                <input type = "date" name = "dateDue" min="2025-01-01" max="9999-12-31" class="add-field" id="date">
             </div>
             <p class="add-field-div err" id="err-date">Please select a due date</p>
 
             <div class="add-field-div">
-                <label for="priority">Task Priority</label>
+                <label for="priority">Priority</label>
                     <select name = "priority" class="add-field">
                         <option value = "none">Please select</option>
                         <option value = "Low">Low Priority</option>
