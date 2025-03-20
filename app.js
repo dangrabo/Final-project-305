@@ -37,8 +37,6 @@ async function connect() {
 
 
 app.get('/', async (req, res) => {
-
-
     const conn = await connect();
     const submissions = await conn.query('SELECT * FROM submissions WHERE completed <> 1 AND deleted <> 1;');
     console.log(submissions);
@@ -92,8 +90,8 @@ app.post('/submit-task', async (req, res) => {
     const falseValue = false;
 
     const insertQuery = await conn.query(`INSERT INTO submissions 
-        (dateStarted, dateDue, title, description, priority, completed, deleted) VALUES (?, ?, ?, ?, ?, ?, ?)`, 
-        [newTask.dateStarted, newTask.dateDue, newTask.title, newTask.description, newTask.priority, falseValue, falseValue]);
+        (dateDue, title, description, priority, completed, deleted) VALUES (?, ?, ?, ?, ?, ?)`, 
+        [newTask.dateDue, newTask.title, newTask.description, newTask.priority, falseValue, falseValue]);
 
     res.render('confirmation', {newTask});
     conn.release();
@@ -170,6 +168,15 @@ app.get('/clearCompleted', async (req, res) => {
     console.log(submissions);
 
     res.render('completed', {submissions});
+    conn.release();
+});
+
+app.get('/sorted', async (req, res) => {
+    const conn = await connect();
+    const submissions = await conn.query('SELECT * FROM submissions WHERE completed <> 1 AND deleted <> 1 ORDER BY dateDue ASC;');
+    console.log(submissions);
+    
+    res.render('home', {submissions});
     conn.release();
 });
 
