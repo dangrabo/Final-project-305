@@ -69,7 +69,7 @@
     <!-- Checks if there are tasks, then displays one of two footer buttons to either add a task or clear all tasks -->
     <div class="footer-div">
         <a href="/add"><button class="completed-button go-back-on-add">+</button></a>
-        <% if (submissions.length !== 0) { %>
+        <% if (submissions.length > 1) { %>
             <a href="sorted"><button class="completed-button go-back-on-add">Sort By Date</button></a>
         <% } %>
     </div>
