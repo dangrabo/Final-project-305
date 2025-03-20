@@ -71,7 +71,6 @@ app.get('/add', (req, res) => {
 app.post('/submit-task', async (req, res) => {
     const newTask = {
         title: req.body.title,
-        dateStarted: req.body.dateStarted,
         dateDue: req.body.dateDue,
         priority: req.body.priority,
         description: req.body.description 
