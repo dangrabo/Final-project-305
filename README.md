@@ -5,8 +5,9 @@ This Task List Manager is designed to help you manage any tasks you may have. Yo
 
 There is a navigation button to help you view not only your current tasks, but to also add a new task, view your completed tasks and your deleted tasks. You are able to complete or delete a task on the current tasks page. On both the completed and deleted tasks pages, you are able to restore your tasks back to the current tasks page. Alternatively, you are able to delete all your completed and deleted tasks permanently.
 
-There is responsiveness for mobile, tablets, and desktop. There are also lots of buttons on the pages to ensure that the web page is user friendly. You are able to click the headings to reliably go back to the current tasks page, and there is a "green +" on the current tasks, completed and deleted tasks to help show where to go to add another task. Finally, there is a "sort by date" button on the current tasks to sort your tasks based on date, the closest being on top and the furthest being on bottom.
+There is responsiveness for mobile, tablets, and desktop. There are also lots of buttons on the pages to ensure that the web page is user friendly. You are able to click the headings to reliably go back to the current tasks page, and there is a "green +" on the current tasks page to easily add a new task. Finally, there is a "sort by date" button on the current tasks page to sort your tasks based on date, the soonest being on top and the furthest out being on bottom.
 
 For limitations, there isn't a way to permanently delete tasks individually. You are only able to do that through deleting all the tasks. Also, sorting the tasks won't permanently sort them, meaning they won't stay sorted if you add, delete or complete a task. 
 
-Xavier Contribution: App.js routes, SQL, Backend Validation
+Xavier Contribution: App.js routes, SQL, Backend Validation, EJS views
+Daniel Contribution: App.js routes, Styles, Frontend Validation, EJS views
