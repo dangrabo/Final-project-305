@@ -202,17 +202,18 @@ h3 {
     width: 80%;
     margin: 5px auto;
     display: flex;
+    align-items: center;
 }
 
 .add-field {
     background-color: rgb(254, 247, 218);
     box-sizing: border-box;
-    border: 1px solid rgb(14, 100, 26);
+    border: 2px solid rgb(14, 100, 26);
     display: inline-block;
     width: 55%;
-    height: 25px;
+    height: 35px;
     border-radius: 5px;
-    padding: 4px;
+    padding: 5px;
 }
 
 label {

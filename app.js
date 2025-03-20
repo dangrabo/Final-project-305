@@ -74,7 +74,7 @@ app.post('/submit-task', async (req, res) => {
         dateStarted: req.body.dateStarted,
         dateDue: req.body.dateDue,
         priority: req.body.priority,
-        description: req.body.descriptionnpx 
+        description: req.body.description 
     };
 
     // Back-end validation

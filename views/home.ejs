@@ -41,7 +41,9 @@
                             <p>Due: <%= sub.dateDue.toLocaleDateString('en-US', options) %></p>
                             <p>Priority: <%= sub.priority %></p>
                         </div>
-                        <p class="description"><%= sub.description %></p>
+                        <% if (sub.description) { %>
+                            <p class="description"><%= sub.description %></p>   
+                        <% } %>
                         <div class="task-card-buttons">
                             <form action="delete" method="post" class="button-form">
                                 <button type = "submit" class="delete-button">Delete</button>

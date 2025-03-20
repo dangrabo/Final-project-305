@@ -32,10 +32,11 @@
             <div class="value-div">
                 <p class="label">Priority: </p><p class="value"><%= newTask.priority %></p>
             </div>
-            <div class="value-div description">
-                <p class="value"><%= newTask.description %></p>
-            </div>
-            
+            <% if (newTask.description) { %>
+                <div class="value-div description">
+                    <p class="description"><%= newTask.description %></p>   
+                </div>  
+            <% } %>
         </div>
     </div>
     <a href="/"><button class="completed-button go-back-on-add">Go Back</button></a>
