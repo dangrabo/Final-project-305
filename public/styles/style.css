@@ -260,6 +260,13 @@ hr {
     margin: 5px 0;
 }
 
+/* ------------------Footer------------------*/
+.footer-div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
 /* ------------------Special Colors------------------*/
 #completed-h1 {
     color: rgb(254, 247, 218);
