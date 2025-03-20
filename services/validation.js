@@ -14,13 +14,9 @@ export function validateForm(data) {
     }
 
     // Validate the priority
-    if (!data.priority || data.priority === "none") {
-        errors.push("Select a size");
-    } else {
-        let validOptions = ["Low", "Medium", "High"];
-        if (!validOptions.includes(data.priority)) {
-            errors.push("Don't change the priority!")
-        }
+    let validOptions = ["Low", "Medium", "High"];
+    if (!validOptions.includes(data.priority)) {
+        errors.push("Don't change the priority!")
     }
 
     // Return the errors
