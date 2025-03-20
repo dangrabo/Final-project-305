@@ -1,3 +1,4 @@
+<!-- This view renders all the tasks that have been selected as "Completed" from the main task list -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
     <title>Completed Tasks</title>
 </head>
 <body>
+    <!-- Header div -->
     <div id="main">
         <div id="header">
             <div class="left-right-header">
@@ -27,20 +29,26 @@
                 <li><a href="completed">Completed Tasks</a></li>
                 <li><a href="deleted">Deleted Tasks</a></li>
             </ul>
-        </div>    
+        </div>
+        <!-- Section to display completed tasks -->
         <div id="task-container">
+            <!-- Checks if there are tasks to display, then populates the list if tasks exist -->
             <% if (submissions.length === 0) { %>
                 <div class="task-card"><p id="no-tasks-p">There are no tasks to display</p></div>
             <% } else { %>
                 <% for (let sub of submissions) { %>
                     <% const options = { year: 'numeric', month: 'long', day: 'numeric' }; %>
+                    
                     <div class="task-card">
                         <h3><%= sub.title %></h3>
+                        
                         <div class="line1">
                             <p>Due: <%= sub.dateDue.toLocaleDateString('en-US', options) %></p>
                             <p>Priority: <%= sub.priority %></p>
                         </div>
+                        
                         <p class="description"><%= sub.description %></p>
+                        
                         <div class="task-card-buttons">
                             <form action="restoreCompleted" method="post" class="button-form">
                                 <button type = "submit" class="completed-button">Restore</button>
@@ -52,6 +60,7 @@
             <% } %>
         </div>
     </div>
+    <!-- Checks if there are tasks, then displays one of two footer buttons to either add a task or clear all tasks -->
     <% if (submissions.length !== 0) { %>
         <a href="/clearCompleted"><button class="delete-button go-back-on-add">Clear All</button></a>
     <% } else { %>

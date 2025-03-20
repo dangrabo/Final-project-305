@@ -1,3 +1,4 @@
+<!-- This view displays the form which allows the user to add a task to the database -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
     <title>Adding Your Task</title>
 </head>
 <body>
+    <!-- Header div -->
     <div id="header">
         <div class="left-right-header">
         </div>
@@ -27,21 +29,23 @@
             <li><a href="deleted">Deleted Tasks</a></li>
         </ul>
     </div> 
+    <!-- Add task form section -->
     <div class="add-card">
         <form action = "submit-task" method = "post" id="add-form">
-            
             <div class="add-field-div">
                 <label for="title">Title</label>
                 <input type = "text" name = "title" class="add-field" id="title">
             </div>            
+            
             <p class="add-field-div err" id="err-title">Title is required</p>
             
             <div class="add-field-div">
                 <label for="dateDue">Date Due</label>
                 <input type = "date" name = "dateDue" min="2025-01-01" max="9999-12-31" class="add-field" id="date">
             </div>
+           
             <p class="add-field-div err" id="err-date">Please select a due date</p>
-
+            
             <div class="add-field-div">
                 <label for="priority">Priority</label>
                     <select name = "priority" class="add-field">
@@ -50,7 +54,7 @@
                         <option value = "High">High Priority</option>
                     </select>
             </div>
-
+            
             <div class="add-field-div">
                 <label for="description">Description</label>
                 <input type = "text" name = "description" class="add-field">
@@ -61,8 +65,7 @@
             </div>
         </form>
     </div>
-
+    <!-- Footer button -->
     <a href="/"><button class="delete-button go-back-on-add">Go Back</button></a>
-
 </body>
 </html>

@@ -1,3 +1,4 @@
+<!-- This view shows the user that the task has successfully been submitted, along with the taks info -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,7 @@
     <title>Confirmation</title>
 </head>
 <body>
+    <!-- Header div -->
     <div id="header">
         <div class="left-right-header">
         </div>
@@ -26,16 +28,19 @@
             <li><a href="deleted">Deleted Tasks</a></li>
         </ul>
     </div> 
+    <!-- Task info section -->
     <div class="add-card">
         <h3><%= newTask.title %></h3>
-        
+        <!-- Displays the info from the newly submitted task -->
         <div class="info-div">
             <div class="value-div">
                 <p class="label">Date Due: </p><p class="value"><%= newTask.dateDue %></p>
             </div>
+            
             <div class="value-div">
                 <p class="label">Priority: </p><p class="value"><%= newTask.priority %></p>
             </div>
+            <!-- Checks if there is a description to evaluate the need for a colored background -->
             <% if (newTask.description) { %>
                 <div class="value-div description">
                     <p class="description"><%= newTask.description %></p>   
@@ -43,6 +48,7 @@
             <% } %>
         </div>
     </div>
+    <!-- Footer button -->
     <a href="/"><button class="completed-button go-back-on-add">Go Back</button></a>
 </body>
 </html>
