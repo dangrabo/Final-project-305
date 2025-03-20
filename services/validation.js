@@ -1,3 +1,4 @@
+// Function to validate the form on the back end
 export function validateForm(data) {
     
     // Store the errors within this array

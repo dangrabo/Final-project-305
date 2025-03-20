@@ -1,10 +1,11 @@
+// Import statements
 import express from 'express';
 import mariadb from 'mariadb';
 import { urlencoded } from 'express';
 import {validateForm} from './services/validation.js';
 import dotenv from 'dotenv';
 
-
+// Basic node variables to run website, use req.body, use ejs, and reliably link css in ejs
 const app = express();
 const PORT = 3000;
 app.use(express.urlencoded({extended: true}));
@@ -35,7 +36,7 @@ async function connect() {
     }
 }
 
-
+// The home route, showing current tasks
 app.get('/', async (req, res) => {
     const conn = await connect();
     const submissions = await conn.query('SELECT * FROM submissions WHERE completed <> 1 AND deleted <> 1;');
@@ -45,6 +46,7 @@ app.get('/', async (req, res) => {
     conn.release();
 });
 
+// The completed route, shows completed tasks
 app.get('/completed', async (req, res) => {
     const conn = await connect();
     const submissions = await conn.query('SELECT * FROM submissions WHERE completed = 1 AND deleted <> 1');
@@ -54,6 +56,7 @@ app.get('/completed', async (req, res) => {
     conn.release();
 });
 
+// The deleted route, shows deleted tasks
 app.get('/deleted', async (req, res) => {
     const conn = await connect();
     const submissions = await conn.query('SELECT * FROM submissions WHERE completed <> 1 AND deleted = 1');
@@ -62,10 +65,12 @@ app.get('/deleted', async (req, res) => {
     conn.release();
 });
 
+// The add route, user can add tasks here
 app.get('/add', (req, res) => {
     res.render('add')
 });
 
+// The confirmaiton route. Backend validation, inserting data to SQL
 app.post('/submit-task', async (req, res) => {
     const newTask = {
         title: req.body.title,
@@ -97,6 +102,7 @@ app.post('/submit-task', async (req, res) => {
     conn.release();
 });
 
+// The delete route button, will delete a task through updating SQL
 app.post('/delete', async (req, res) => {
     const deleteId = req.body.deleteId;
 
@@ -110,6 +116,7 @@ app.post('/delete', async (req, res) => {
     conn.release();
 });
 
+// The complete route button, will complete a task through updating SQL
 app.post("/complete", async (req, res) => {
     const completeId = req.body.completeId;
 
@@ -123,6 +130,7 @@ app.post("/complete", async (req, res) => {
     conn.release();
 });
 
+// The restoreDeleted route, will restore the corresponding task back to current tasks
 app.post('/restoreDeleted', async (req, res) => {
     const restoreId = req.body.restoreId;
 
@@ -136,6 +144,7 @@ app.post('/restoreDeleted', async (req, res) => {
     conn.release();
 });
 
+// The clearDeleted route, will delete ALL tasks in deleted route
 app.get('/clearDeleted', async (req, res) => {
 
     const conn = await connect();
@@ -147,6 +156,7 @@ app.get('/clearDeleted', async (req, res) => {
     conn.release();
 });
 
+// The restoreCompleted route, will restore the corresponding task back to current tasks
 app.post('/restoreCompleted', async (req, res) => {
     const restoreId = req.body.restoreId;
 
@@ -160,6 +170,7 @@ app.post('/restoreCompleted', async (req, res) => {
     conn.release();
 });
 
+// The clearCompleted route, will delete ALL tasks in completed route
 app.get('/clearCompleted', async (req, res) => {
 
     const conn = await connect();
@@ -171,6 +182,7 @@ app.get('/clearCompleted', async (req, res) => {
     conn.release();
 });
 
+// The sorted route, will sort the current tasks based on dateDue from the closest date on top to the furthest date on bottom
 app.get('/sorted', async (req, res) => {
     const conn = await connect();
     const submissions = await conn.query('SELECT * FROM submissions WHERE completed <> 1 AND deleted <> 1 ORDER BY dateDue ASC;');
@@ -180,7 +192,7 @@ app.get('/sorted', async (req, res) => {
     conn.release();
 });
 
+// Able to run our website by clicking on the link
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`)
 });
-
